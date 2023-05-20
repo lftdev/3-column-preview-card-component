@@ -13,16 +13,23 @@ body {
 
 body {
   display: flex;
-  font-family: "Lexend Deca";
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: gray;
+  font-family: "Lexend Deca";
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 80px;
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding: 30px;
+}
+main.flex-container {
+  flex-direction: column;
 }
 
 .column {
@@ -76,6 +83,29 @@ body {
   text-decoration: none;
   padding: 0.6rem 2rem;
   border-radius: 2rem;
+}
+
+@media (min-width: 800px) {
+  main {
+    max-width: 800px;
+    max-height: 450px;
+  }
+  main.flex-container {
+    flex-direction: row;
+  }
+  .column {
+    width: 30%;
+    height: 100%;
+  }
+  .column.active {
+    width: 100%;
+  }
+  .column:first-of-type {
+    border-radius: 15px 0 0 15px;
+  }
+  .column:last-of-type {
+    border-radius: 0 15px 15px 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
